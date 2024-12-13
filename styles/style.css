@@ -4,8 +4,8 @@
   max-inline-size: 700px;
   min-block-size: 100dvb;
   margin: auto;
-  font-family: var(--main-font, sans-serif);
-  font-weight: var(--main-font-weight-normal);
+  /* font-family: var(--main-font, sans-serif);
+  font-weight: var(--main-font-weight-normal); */
   color: var(--main-color);
   background-image: var(--main-bg);
   background-attachment: fixed;
