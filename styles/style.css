@@ -1,16 +1,304 @@
-/* Здесь вы напишете основную часть стилей страницы.
-
-Будьте внимательны! Для корректной работы скриптов на этом сайте нужно, чтобы в HTML некоторые классы были названы особым образом:
-✦ like-icon — для svg-иконки анимированного сердца
-✦ card__like-button — для кнопки Like рядом с иконкой
-✦ card__icon-button — для кнопки, оборачивающей иконку
-✦ card__icon-button — для кнопки, оборачивающей иконку
-✦ is-liked — для обозначения состояния лайкнутой иконки в виде сердца
-✦ button__text — для обозначения текстового элемента внутри кнопки
-
-*/
-
 .page {
+  inline-size: var(--main-inline-size);
   min-inline-size: 320px;
+  max-inline-size: 700px;
   min-block-size: 100dvb;
+  margin: auto;
+  font-family: var(--main-font, sans-serif);
+  font-weight: var(--main-font-weight-normal);
+  color: var(--main-color);
+  background-image: var(--main-bg);
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+}
+
+@supports (font-variation-settings: normal) {
+  .page {
+    font-family: var(--main-font, sans-serif);
+    font-weight: var(--main-font-weight-normal);
+  }
+}
+
+.header {
+  margin-block: var(--header-block-margin);
+  margin-inline: auto;
+  inline-size: 100%;
+  font-family: var(--accent-font, fantasy);
+  font-weight: 400;
+  color: inherit;
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.25rem;
+  background-color: var(--header-bg-color);
+  border: var(--main-border);
+}
+
+.header__logo {
+  inline-size: 100%;
+  text-align: center;
+  overflow-wrap: break-word;
+  font-size: var(--logo-font-size);
+  margin-block-start: var(--header-logo-margin-block);
+}
+
+.header__title {
+  font-size: var(--title-font-size);
+  margin-block-end: var(--header-logo-margin-block);
+}
+
+.content {
+  margin-inline: auto;
+  inline-size: 100%;
+  color: inherit;
+}
+
+.card {
+  inline-size: 100%;
+  border: var(--main-border);
+  margin-block-end: var(--card-gap);
+  background-color: var(--main-bg-color);
+}
+
+.card__title {
+  font-family: inherit;
+  font-variation-settings: "wght" var(--main-font-weight-bold);
+  font-size: var(--main-font-size);
+  padding: 5px 10px 4px;
+}
+
+.card__image-container {
+  border-block-start: var(--main-border);
+  border-block-end: var(--main-border);
+  display: block;
+  inline-size: 100%;
+  position: relative;
+}
+
+.card__image-container_subtitle {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  z-index: 1;
+  font-family: var(--accent-font, fantasy);
+  font-size: var(--accent-font-size);
+  text-transform: uppercase;
+  mix-blend-mode: hard-light;
+  opacity: 0.5;
+  text-shadow: -1px 0 var(--text-stroke-color), 0 1px var(--text-stroke-color),
+    1px 0 var(--text-stroke-color), 0 -1px var(--text-stroke-color);
+}
+
+@supports (-webkit-text-stroke: 1px var(--text-stroke-color)) {
+  .card__image-container_subtitle {
+    text-shadow: none;
+    -webkit-text-stroke: 1px var(--text-stroke-color, #fff);
+  }
+}
+
+.card__image {
+  display: block;
+  aspect-ratio: 1/1;
+  inline-size: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.card__text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--card-text-block-gap);
+  padding: var(--card-text-block-padding);
+  font-size: var(--main-font-size);
+  line-height: 1.16667;
+}
+
+.card__buttons {
+  display: flex;
+  padding-block-end: var(--card-text-block-padding);
+  padding-inline: var(--card-text-block-padding);
+  justify-content: end;
+}
+
+.card__icon-button {
+  margin: 0;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  block-size: var(--like-button-block-size);
+  border: 2px solid transparent;
+  transition: border 0.3s ease;
+}
+
+.card__icon-button:focus {
+  outline: none;
+}
+
+.card__icon-button:focus-visible {
+  border: var(--main-border);
+}
+
+.button {
+  background-color: transparent;
+  border: var(--main-border);
+  color: var(--button-color);
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  line-height: 0.9;
+  box-shadow: none;
+  transition: box-shadow 0.3s ease;
+  position: relative;
+}
+
+.button:focus {
+  outline: none;
+}
+
+.button:focus-visible {
+  box-shadow: 2px 2px 0 var(--main-color);
+}
+
+.button::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: var(--main-color);
+  transform-origin: left;
+  transform: scaleX(0);
+  transition: transform 0.5s ease-in-out;
+}
+
+.button:hover::after {
+  transform: scaleX(1);
+}
+
+.button__text {
+  font-family: var(--accent-font);
+  font-size: var(--accent-font-size);
+  font-weight: 400;
+  position: relative;
+  z-index: 1;
+  mix-blend-mode: difference;
+}
+
+.card__like-button {
+  padding: 0;
+  inline-size: var(--like-button-inline-size);
+  block-size: var(--like-button-block-size);
+}
+
+@media (320px <= width <= 375px) {
+  .page {
+    inline-size: var(--mobile-inline-size);
+  }
+}
+
+.filter_blur {
+  filter: blur(5px);
+}
+
+.filter_invert {
+  filter: invert(1);
+}
+
+.filter_contrast {
+  filter: contrast(200%);
+}
+
+.filter_sepia {
+  filter: sepia(50%);
+}
+
+.filter_hue-rotate {
+  filter: hue-rotate(290deg) saturate(250%);
+}
+
+.filter_bright {
+  filter: brightness(1.5);
+}
+
+.filter_gray {
+  filter: grayscale(50%);
+}
+
+.button__save {
+  background-color: var(--main-bg-color);
+  margin-inline: auto;
+  margin-block-end: var(--header-block-margin);
+  inline-size: var(--save-button-inline-size);
+  block-size: var(--save-button-block-size);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.floppy-small {
+  position: relative;
+  mix-blend-mode: difference;
+  z-index: 1;
+  inline-size: var(--save-button-floppy-inline-size);
+}
+
+@media (320px <= width <= 375px) {
+  .button__save {
+    flex-direction: column;
+  }
+
+  .floppy-small {
+    inline-size: var(--save-button-floppy-inline-size-mobile);
+  }
+}
+
+dialog {
+  padding: 30px;
+  inline-size: var(--dialog-inline-size);
+}
+
+@media (320px <= width <= 375px) {
+  dialog {
+    inline-size: var(--dialog-inline-size-mobile);
+    padding-inline: 42px;
+  }
+}
+
+dialog[open] {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+dialog[open] .dialog__header {
+  display: flex;
+  gap: 20px;
+}
+
+dialog::backdrop {
+  background-color: var(--main-color);
+  opacity: 0.75;
+}
+
+.dialog__header_line-height {
+  font-family: var(--accent-font);
+  font-size: var(--accent-font-size);
+  font-weight: 400;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+.floppy-big {
+  max-inline-size: var(--dialog-floppy-inline-size);
+}
+
+.ok-button {
+  padding-block: 12.5px;
 }

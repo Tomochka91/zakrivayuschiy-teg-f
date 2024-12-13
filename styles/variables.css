@@ -1,1 +1,50 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
+:root {
+  --main-bg: repeating-linear-gradient(
+      to right,
+      #d3d3d3 0px 2px,
+      transparent 2px 4px
+    ),
+    repeating-linear-gradient(to bottom, #d3d3d3 0px 2px, transparent 2px 4px),
+    linear-gradient(#e7e7e7 0.01%, #1a1a1a);
+  --main-border: 2px solid #000;
+  --main-bg-color: #fff;
+  --main-color: #000;
+  --main-font: "Inter-Variable";
+  --main-font-size: 18px;
+  --main-font-weight-normal: 400;
+  --main-font-weight-bold: 700;
+  --accent-font: "PressStart2P-Regular";
+  --accent-font-size: 14px;
+  --header-bg-color: #fff;
+  --logo-font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
+  --header-logo-margin-block: clamp(7.5rem, 7.3239rem + 0.7512vw, 8rem);
+  --title-font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
+  --header-block-margin: 6.25rem;
+  --mobile-inline-size: 100vw;
+  --min-inline-size: 375px;
+  --max-inline-size: 700px;
+  --main-inline-size: clamp(
+    var(--min-inline-size),
+    15.6937rem + 31.1737vw,
+    var(--max-inline-size)
+  );
+  --card-gap: 50px;
+  --card-text-block-padding: 25px;
+  --card-text-block-gap: 27px;
+  --text-stroke-color: #fff;
+  --button-color: #fff;
+  --like-button-inline-size: 130px;
+  --like-button-block-size: 38px;
+  --save-button-inline-size: clamp(306px, 18.4866rem + 2.7238vw, 335px);
+  --save-button-block-size: calc(
+    8.688rem - clamp(3.438rem, 2.8rem + 2.7223vw, 5.25rem)
+  );
+  --save-button-floppy-inline-size: 21px;
+  --save-button-floppy-inline-size-mobile: 28px;
+  --dialog-inline-size: 353px;
+  --dialog-inline-size-mobile: 341px;
+  --dialog-floppy-inline-size: 39px;
+  --heart-contour-color: #000;
+  --heart-body-color: #ff0000;
+}
