@@ -14,7 +14,7 @@
   --main-font-size: 18px;
   --main-font-weight-normal: 400;
   --main-font-weight-bold: 700;
-  --accent-font: "PressStart2P-Regular";
+  --accent-font: "PressStart2P";
   --accent-font-size: 14px;
   --header-bg-color: #fff;
   --logo-font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
@@ -36,15 +36,22 @@
   --button-color: #fff;
   --like-button-inline-size: 130px;
   --like-button-block-size: 38px;
-  --save-button-inline-size: clamp(306px, 18.4866rem + 2.7238vw, 335px);
+  --save-button-inline-size: clamp(310px, 18.7370rem + 2.7223vw, 339px);
   --save-button-block-size: calc(
     8.688rem - clamp(3.438rem, 2.8rem + 2.7223vw, 5.25rem)
   );
   --save-button-floppy-inline-size: 21px;
   --save-button-floppy-inline-size-mobile: 28px;
-  --dialog-inline-size: 353px;
+  --dialog-inline-size: 357px;
   --dialog-inline-size-mobile: 341px;
+  --dialog-padding: 28px 28px;
+  --dialog-padding-mobile: 30px 39px 28px;
   --dialog-floppy-inline-size: 39px;
+  --dialog-ok-button-inline-size: 293px;
+  --dialog-ok-button-block-size: 38px;
+  --dialog-ok-button-inline-size-mobile: 257px;
+  --dialog-header-subtitle-inline-size: 234px;
+  --dialog-header-subtitle-inline-size-mobile: 198px;
   --heart-contour-color: #000;
   --heart-body-color: #ff0000;
 }

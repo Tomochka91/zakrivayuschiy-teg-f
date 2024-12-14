@@ -60,6 +60,7 @@
               viewBox="0 0 39 36"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
             >
               <g class="heart">
                 <path
@@ -127,9 +128,7 @@
             Сейчас важна поддержка близких, вера в себя и ответ на ключевой
             вопрос: "Что меня мотивирует?"
           </p>
-          <p></p>
         </div>
-
         <div class="card__buttons">
           <button
             class="card__icon-button"
@@ -143,6 +142,7 @@
               viewBox="0 0 39 36"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
             >
               <g class="heart">
                 <path
@@ -208,9 +208,7 @@
             Маленькие победы вдохновляют! Что же будет дальше? Вперёд, скорее за
             новыми знаниями.
           </p>
-          <p></p>
         </div>
-
         <div class="card__buttons">
           <button
             class="card__icon-button"
@@ -224,6 +222,7 @@
               viewBox="0 0 39 36"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
             >
               <g class="heart">
                 <path
@@ -291,9 +290,7 @@
             Нужно уметь вовремя остановиться. Находить баланс между слишком
             плохо и слишком хорошо. Оптимизация наше всё!
           </p>
-          <p></p>
         </div>
-
         <div class="card__buttons">
           <button
             class="card__icon-button"
@@ -307,6 +304,7 @@
               viewBox="0 0 39 36"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
             >
               <g class="heart">
                 <path
@@ -375,9 +373,7 @@
             Вот еще один стимул: не отставать от команды. Я тоже всё успею, ведь
             много кто уже вырывается вперёд! Молодцы!
           </p>
-          <p></p>
         </div>
-
         <div class="card__buttons">
           <button
             class="card__icon-button"
@@ -391,6 +387,7 @@
               viewBox="0 0 39 36"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
             >
               <g class="heart">
                 <path
@@ -457,9 +454,7 @@
             Почему ничего не работает, почему я ничего не понимаю?! Пожалуй,
             подумаю об этом завтра...
           </p>
-          <p></p>
         </div>
-
         <div class="card__buttons">
           <button
             class="card__icon-button"
@@ -473,6 +468,7 @@
               viewBox="0 0 39 36"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
             >
               <g class="heart">
                 <path
@@ -543,9 +539,7 @@
             персонального time-manager, пусть он решает, как всё успеть. А я
             пока почитаю самоучитель: "Как поймать Дзен".
           </p>
-          <p></p>
         </div>
-
         <div class="card__buttons">
           <button
             class="card__icon-button"
@@ -559,6 +553,7 @@
               viewBox="0 0 39 36"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
             >
               <g class="heart">
                 <path
@@ -627,9 +622,7 @@
             У самурая есть только путь? Но мне еще нужен результат. Пойду
             "погуглю".
           </p>
-          <p></p>
         </div>
-
         <div class="card__buttons">
           <button
             class="card__icon-button"
@@ -643,6 +636,7 @@
               viewBox="0 0 39 36"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
             >
               <g class="heart">
                 <path
@@ -698,6 +692,7 @@
           class="floppy-small"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 21 21"
+          aria-hidden="true"
         >
           <use href="./svg/floppy.svg#floppy"></use>
         </svg>
@@ -709,12 +704,13 @@
             class="floppy-big"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 21 21"
+            aria-hidden="true"
           >
             <use href="./svg/floppy.svg#floppy"></use>
           </svg>
-          <span class="dialog__header_line-height"
-            >Вставьте дискету, чтобы продолжить</span
-          >
+          <p class="dialog__header_subtitle">
+            Вставьте дискету, чтобы продолжить
+          </p>
         </div>
         <button
           class="button ok-button"
@@ -722,7 +718,7 @@
           onclick="window['floppy-insert'].close()"
           aria-label="Нажать ОК"
         >
-          <span class="button__text">ок</span>
+          <span class="button__text">ОК</span>
         </button>
       </dialog>
     </main>

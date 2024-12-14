@@ -4,7 +4,7 @@
   max-inline-size: 700px;
   min-block-size: 100dvb;
   margin: auto;
-  font-family: var(--main-font, sans-serif);
+  font-family: var(--main-font, "Arial", sans-serif);
   font-variation-settings: "wght" var(--main-font-weight-normal);
   color: var(--main-color);
   background-image: var(--main-bg);
@@ -17,7 +17,7 @@
   margin-block: var(--header-block-margin);
   margin-inline: auto;
   inline-size: 100%;
-  font-family: var(--accent-font, fantasy);
+  font-family: var(--accent-font, "Arial", fantasy);
   font-weight: 400;
   color: inherit;
   text-transform: uppercase;
@@ -76,7 +76,7 @@
   top: 25px;
   right: 25px;
   z-index: 1;
-  font-family: var(--accent-font, fantasy);
+  font-family: var(--accent-font, "Arial", fantasy);
   font-size: var(--accent-font-size);
   text-transform: uppercase;
   mix-blend-mode: hard-light;
@@ -111,12 +111,14 @@
 
 .card__buttons {
   display: flex;
+  gap: 2px;
   padding-block-end: var(--card-text-block-padding);
   padding-inline: var(--card-text-block-padding);
   justify-content: end;
 }
 
 .card__icon-button {
+  padding: 0;
   margin: 0;
   background-color: transparent;
   cursor: pointer;
@@ -174,9 +176,10 @@
 }
 
 .button__text {
-  font-family: var(--accent-font);
+  font-family: var(--accent-font, "Arial", fantasy);
   font-size: var(--accent-font-size);
   font-weight: 400;
+  line-height: 0.9;
   position: relative;
   z-index: 1;
   mix-blend-mode: difference;
@@ -191,6 +194,10 @@
 @media (320px <= width <= 375px) {
   .page {
     inline-size: var(--mobile-inline-size);
+  }
+
+  .card__image-container_subtitle {
+    right: 13px;
   }
 }
 
@@ -241,7 +248,7 @@
   inline-size: var(--save-button-floppy-inline-size);
 }
 
-@media (320px <= width <= 375px) {
+@media (width <= 375px) {
   .button__save {
     flex-direction: column;
   }
@@ -251,27 +258,12 @@
   }
 }
 
-dialog {
-  padding: 30px;
-  inline-size: var(--dialog-inline-size);
-}
-
-@media (320px <= width <= 375px) {
-  dialog {
-    inline-size: var(--dialog-inline-size-mobile);
-    padding-inline: 42px;
-  }
-}
-
 dialog[open] {
+  padding: var(--dialog-padding);
+  inline-size: var(--dialog-inline-size);
   display: flex;
   flex-direction: column;
   gap: 30px;
-}
-
-dialog[open] .dialog__header {
-  display: flex;
-  gap: 20px;
 }
 
 dialog::backdrop {
@@ -279,8 +271,14 @@ dialog::backdrop {
   opacity: 0.75;
 }
 
-.dialog__header_line-height {
-  font-family: var(--accent-font);
+.dialog__header {
+  display: flex;
+  gap: 20px;
+}
+
+.dialog__header_subtitle {
+  max-inline-size: var(--dialog-header-subtitle-inline-size);
+  font-family: var(--accent-font, "Arial", fantasy);
   font-size: var(--accent-font-size);
   font-weight: 400;
   line-height: 1.5;
@@ -292,5 +290,22 @@ dialog::backdrop {
 }
 
 .ok-button {
-  padding-block: 12.5px;
+  block-size: var(--dialog-ok-button-block-size);
+}
+
+@media (width <= 375px) {
+  dialog[open] {
+    max-inline-size: var(--dialog-inline-size-mobile);
+    padding: var(--dialog-padding-mobile);
+  }
+
+  .dialog__header_subtitle {
+    max-inline-size: var(--dialog-header-subtitle-inline-size-mobile);
+  }
+}
+
+@media (320px <= width < 375px) {
+  dialog[open] {
+    max-inline-size: 100vw;
+  }
 }
